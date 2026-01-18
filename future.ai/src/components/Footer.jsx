@@ -61,7 +61,7 @@ const Footer = () => {
                     <h4>Contact</h4>
                     <ul className="footer-links">
                         <li>📞 9150802851</li>
-                        <li>📍 PN Opudur</li>
+                        <li>📍 PN Pudur</li>
                         <li>✉️ contact@Xpertdev.ai</li>
                     </ul>
                 </div>
