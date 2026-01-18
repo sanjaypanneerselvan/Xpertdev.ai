@@ -1,0 +1,147 @@
+.contact {
+    background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-card,
+.cta-card {
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.contact-card h3,
+.cta-card h3 {
+    font-size: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+}
+
+.info-text h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.info-text p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.cta-card {
+    background: var(--gradient-primary);
+    color: white;
+    text-align: center;
+}
+
+.cta-card h3 {
+    color: white;
+    background: none;
+    -webkit-text-fill-color: white;
+}
+
+.cta-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form {
+    padding: 2.5rem;
+    border-radius: 20px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.floating-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #999;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background: white;
+    padding: 0 0.5rem;
+}
+
+.floating-label.active {
+    top: -0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(0, 102, 255, 0.2);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.form-input:focus+.floating-label,
+.form-input:not(:placeholder-shown)+.floating-label {
+    top: -0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media (max-width: 968px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
