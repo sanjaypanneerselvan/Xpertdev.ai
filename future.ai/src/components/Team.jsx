@@ -12,12 +12,12 @@ const Team = () => {
         },
         {
             name: 'Swetha Ramamoorthi',
-            role: 'CXO',
+            role: 'Operations Head',
             image: teamPlaceholder,
         },
         {
             name: 'Akshaya Maniyan',
-            role: 'Operations Head',
+            role: 'CXO',
             image: teamPlaceholder,
         },
         {
