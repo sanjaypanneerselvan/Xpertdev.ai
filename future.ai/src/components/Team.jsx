@@ -26,8 +26,8 @@ const Team = () => {
             image: teamPlaceholder,
         },
         {
-            name: 'Sandhiya',
-            role: 'Branding & Advertising',
+            name: 'Indhujaa Sreedhar',
+            role: 'Project & Product Manager',
             image: teamPlaceholder,
         },
         {
