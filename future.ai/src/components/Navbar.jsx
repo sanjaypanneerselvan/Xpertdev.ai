@@ -74,8 +74,8 @@ const Navbar = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 style={{ display: 'flex', alignItems: 'center' }}
             >
-                <span className="logo-text" style={{ marginLeft: '0.75rem', fontSize: '1.25rem', fontWeight: 800 }}>XpertI/O</span>
-                <span className="logo-accent" style={{ fontSize: '1.25rem', fontWeight: 700 }}>&nbsp;Technologies</span>
+                <span className="logo-text" style={{ marginLeft: '0.75rem', fontSize: '1.5rem', fontWeight: 800 }}>XpertI/O</span>
+                <span className="logo-accent" style={{ fontSize: '1.5rem', fontWeight: 700 }}>&nbsp;Technologies</span>
             </motion.div>
           </div>
         </motion.div>
