@@ -66,16 +66,16 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <div className="logo-main">
+          <div className="logo-main" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <img src={logoImg} alt="XpertI/O Technologies Logo" className="navbar-logo-img" />
             <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                style={{ display: 'flex', alignItems: 'center' }}
+                style={{ display: 'flex', alignItems: 'baseline', paddingTop: '4px' }}
             >
-                <span className="logo-text" style={{ marginLeft: '0.75rem', fontSize: '1.5rem', fontWeight: 800 }}>XpertI/O</span>
-                <span className="logo-accent" style={{ fontSize: '1.5rem', fontWeight: 700 }}>&nbsp;Technologies</span>
+                <span className="logo-text" style={{ fontSize: '1.4rem', fontWeight: 800 }}>XpertI/O</span>
+                <span className="logo-accent" style={{ fontSize: '1.4rem', fontWeight: 700 }}>&nbsp;Technologies</span>
             </motion.div>
           </div>
         </motion.div>
