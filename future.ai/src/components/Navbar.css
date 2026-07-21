@@ -53,10 +53,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .logo-accent {
     color: var(--color-accent-dark);
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .navbar-logo-img {
@@ -117,25 +123,29 @@
 }
 
 @media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: row-reverse;
+    }
+
     .navbar-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: -100%;
         width: 70%;
         height: 100vh;
         background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-menu.active {
-        right: 0;
+        left: 0;
     }
 
     .mobile-menu-toggle {
