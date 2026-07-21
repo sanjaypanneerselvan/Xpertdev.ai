@@ -69,6 +69,7 @@ const Navbar = () => {
           <div className="logo-main" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <img src={logoImg} alt="XpertI/O Technologies Logo" className="navbar-logo-img" />
             <motion.div
+                className="brand-text-container"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
