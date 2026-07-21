@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import './Contact.css';
 
@@ -20,12 +20,38 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission
-        console.log('Form submitted:', formData);
-        alert('Thank you for your message! We will get back to you soon.');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setIsSubmitting(true);
+        
+        // IMPORTANT: Replace this URL with your deployed Google Apps Script Web App URL
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbwIO-S8rXHo70FTaVTh7UzF_PvggLz2j3z6cz_GDEPkEfYr9Frvikp-8AliIRudoZkyLw/exec';
+        
+        try {
+            const formDataObj = new FormData();
+            formDataObj.append('name', formData.name);
+            formDataObj.append('email', formData.email);
+            formDataObj.append('phone', formData.phone);
+            formDataObj.append('message', formData.message);
+
+            await fetch(scriptUrl, {
+                method: 'POST',
+                body: formDataObj,
+                mode: 'no-cors'
+            });
+            
+            setShowSuccess(true);
+            setTimeout(() => setShowSuccess(false), 5000);
+            setFormData({ name: '', email: '', phone: '', message: '' });
+        } catch (error) {
+            console.error('Error!', error.message);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -79,10 +105,9 @@ const Contact = () => {
                                 </motion.div>
                                 <div className="info-text">
                                     <h4>Location</h4>
-                                    <p>32B, Sanjay Illam, Mummanaicker Street, PN Opudur</p>
+                                    <p>32B, Sanjay Illam, Mummanaicker Street, PN Pudur,Coimbatore,641041</p>
                                 </div>
                             </div>
-
                             <div className="info-item">
                                 <motion.div
                                     className="info-icon"
@@ -93,7 +118,7 @@ const Contact = () => {
                                 </motion.div>
                                 <div className="info-text">
                                     <h4>Email</h4>
-                                    <p>contact@future.ai</p>
+                                    <p>xpertdev@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +228,37 @@ const Contact = () => {
                     </motion.div>
                 </div>
             </div>
+
+            <AnimatePresence>
+                {showSuccess && (
+                    <motion.div
+                        className="success-popup glass"
+                        initial={{ opacity: 0, y: 50, x: '-50%' }}
+                        animate={{ opacity: 1, y: 0, x: '-50%' }}
+                        exit={{ opacity: 0, y: 50, x: '-50%' }}
+                        style={{
+                            position: 'fixed',
+                            bottom: '2rem',
+                            left: '50%',
+                            zIndex: 9999,
+                            padding: '1rem 2rem',
+                            borderRadius: '10px',
+                            background: 'rgba(255, 255, 255, 0.95)',
+                            border: '1px solid var(--color-primary)',
+                            boxShadow: '0 10px 30px rgba(0, 102, 255, 0.2)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '1rem',
+                            color: 'var(--color-primary)',
+                            fontWeight: '600',
+                            textAlign: 'center'
+                        }}
+                    >
+                        <FaPaperPlane style={{ fontSize: '1.25rem' }} />
+                        Thank you! Our team will contact you within 10 working hours.
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

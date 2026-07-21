@@ -36,7 +36,7 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="mb-2">About Xpertdev.ai</h2>
+                    <h2 className="mb-2">About XpertI/O Technologies</h2>
                     <p className="section-subtitle">
                         Empowering businesses through intelligent digital transformation
                     </p>

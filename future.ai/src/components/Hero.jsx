@@ -1,9 +1,13 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaRocket, FaArrowRight } from 'react-icons/fa';
 import './Hero.css';
 import heroImage from '../assets/hero_ai_visual_1768729075280.png';
+import ScheduleModal from './ScheduleModal';
 
 const Hero = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const scrollToContact = () => {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -87,7 +91,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8 }}
                     >
-                        <button className="btn btn-primary" onClick={scrollToContact}>
+                        <button className="btn btn-primary" onClick={() => setIsModalOpen(true)}>
                             Schedule Appointment
                             <FaArrowRight style={{ marginLeft: '0.5rem' }} />
                         </button>
@@ -108,7 +112,7 @@ const Hero = () => {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.2 }}
                             >
-                                100+
+                                6
                             </motion.h3>
                             <p>Projects Delivered</p>
                         </div>
@@ -119,7 +123,7 @@ const Hero = () => {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.4 }}
                             >
-                                50+
+                                6
                             </motion.h3>
                             <p>Happy Clients</p>
                         </div>
@@ -159,6 +163,8 @@ const Hero = () => {
                     ↓
                 </motion.div>
             </div>
+
+            <ScheduleModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 };

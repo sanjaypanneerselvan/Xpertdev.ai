@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logoImg from '../assets/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -66,10 +67,17 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <div className="logo-main">
-            <span className="logo-text">Xpertdev</span>
-            <span className="logo-accent">.ai</span>
+            <img src={logoImg} alt="XpertI/O Technologies Logo" className="navbar-logo-img" />
+            <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{ display: 'flex', alignItems: 'center' }}
+            >
+                <span className="logo-text" style={{ marginLeft: '0.75rem', fontSize: '2.25rem', fontWeight: 800 }}>XpertI/O</span>
+                <span className="logo-accent" style={{ fontSize: '2.25rem', fontWeight: 700 }}>&nbsp;Technologies</span>
+            </motion.div>
           </div>
-          <div className="logo-tagline">powered by future.ai</div>
         </motion.div>
 
         <div className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>

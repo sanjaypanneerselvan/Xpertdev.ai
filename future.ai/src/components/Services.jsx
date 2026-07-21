@@ -207,6 +207,8 @@ const Services = () => {
                                 y: -10,
                                 transition: { duration: 0.3 }
                             }}
+                            onClick={() => setSelectedService(service)}
+                            whileTap={{ scale: 0.98 }}
                         >
                             <div className="service-image">
                                 <img src={service.image} alt={service.title} />
@@ -226,14 +228,13 @@ const Services = () => {
                                 <h3 className="service-title">{service.title}</h3>
                                 <p className="service-description">{service.description}</p>
 
-                                <motion.button
+                                <motion.div
                                     className="service-link"
                                     whileHover={{ x: 5 }}
                                     transition={{ duration: 0.2 }}
-                                    onClick={() => setSelectedService(service)}
                                 >
                                     Learn More →
-                                </motion.button>
+                                </motion.div>
                             </div>
 
                             <div className="service-glow" style={{ background: `radial-gradient(circle, ${service.color}33, transparent)` }}></div>

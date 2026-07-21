@@ -1,39 +1,32 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import './Team.css';
-import teamPlaceholder from '../assets/team_placeholder_1768729173624.png';
 
 const Team = () => {
     const teamMembers = [
         {
             name: 'Sanjay Panneerselvan',
-            role: 'CEO',
-            image: teamPlaceholder,
-        },
-        {
-            name: 'Swetha Ramamoorthi',
-            role: 'Operations Head',
-            image: teamPlaceholder,
+            role: 'CEO & Founder',
+            description: 'Visionary leader driving the strategic direction and innovation at XpertI/O.',
+            linkedin: 'https://www.linkedin.com/in/sanjayp41/',
         },
         {
             name: 'Akshaya Maniyan',
-            role: 'CXO',
-            image: teamPlaceholder,
+            role: 'CXO & Co-Founder',
+            description: 'Expert strategist orchestrating business operations and long-term planning.',
+            linkedin: 'https://www.linkedin.com/in/akshaya-manian07/',
         },
         {
-            name: 'Nikil S',
-            role: 'Marketing & SEO',
-            image: teamPlaceholder,
+            name: 'Swetha Ramamoorthi',
+            role: 'Chief Operational Officer & Co-Founder',
+            description: 'Operational powerhouse ensuring flawless execution and client success.',
+            linkedin: 'https://www.linkedin.com/in/swetha-r-021a382a4/',
         },
         {
-            name: 'Indhujaa Sreedhar',
-            role: 'Project & Product Manager',
-            image: teamPlaceholder,
-        },
-        {
-            name: 'Eniya Aasaithambi',
-            role: 'Client Coordinator',
-            image: teamPlaceholder,
+            name: 'Srinivesh Prabhu',
+            role: 'Business Development Associate',
+            description: 'Dynamic professional focused on building lasting partnerships and expanding market reach.',
+            linkedin: 'http://linkedin.com/in/srinivesh-prabhu-53b246240/',
         },
     ];
 
@@ -64,28 +57,23 @@ const Team = () => {
                             transition={{ delay: index * 0.1, duration: 0.6 }}
                             whileHover={{ y: -10 }}
                         >
-                            <div className="team-image-wrapper">
-                                <motion.div
-                                    className="team-image"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <img src={member.image} alt={member.name} />
-                                    <div className="image-border"></div>
-                                </motion.div>
-                            </div>
+
 
                             <div className="team-info">
                                 <h3 className="team-name">{member.name}</h3>
                                 <p className="team-role">{member.role}</p>
+                                <p className="team-description" style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem', lineHeight: '1.5' }}>{member.description}</p>
 
-                                <motion.button
+                                <motion.a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="team-social"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <FaLinkedin />
-                                </motion.button>
+                                </motion.a>
                             </div>
 
                             <div className="team-glow"></div>

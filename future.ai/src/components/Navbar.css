@@ -17,7 +17,7 @@
 }
 
 .navbar-container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -57,6 +57,14 @@
 
 .logo-accent {
     color: var(--color-accent-dark);
+}
+
+.navbar-logo-img {
+    height: 85px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .navbar-menu {
