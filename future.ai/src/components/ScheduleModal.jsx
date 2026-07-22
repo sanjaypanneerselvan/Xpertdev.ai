@@ -79,7 +79,8 @@ const ScheduleModal = ({ isOpen, onClose }) => {
                             >
                                 <FaCheckCircle style={{ fontSize: '3rem', color: 'var(--color-primary)', marginBottom: '1rem' }} />
                                 <h3 className="text-gradient mb-2">Thank You!</h3>
-                                <p className="text-gray font-weight-bold" style={{ fontWeight: 600 }}>Our team will contact you within 10 working hours.</p>
+                                <p className="text-gray font-weight-bold" style={{ fontWeight: 600 }}>Thank you! Your appointment request has been submitted successfully.
+Our team will contact you soon for more details regarding your appointment.</p>
                             </motion.div>
                         ) : (
                             <>
