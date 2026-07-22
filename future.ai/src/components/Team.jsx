@@ -12,7 +12,7 @@ const Team = () => {
         },
         {
             name: 'Akshaya Maniyan',
-            role: 'CXO & Co-Founder',
+            role: 'CSO & Co-Founder',
             description: 'Expert strategist orchestrating business operations and long-term planning.',
             linkedin: 'https://www.linkedin.com/in/akshaya-manian07/',
         },
